@@ -1,5 +1,7 @@
 # Microwave designed using PIC Microcontroller and simulated in Proteus
-### In this project, I used the driver that I implemented for the PIC18F4620 microcontroller. This driver allowed me to control the following devices: LCD, LED, Keypad, BUSH_BUTTON, DC motor, EEPROM, Timers, Interrupt, and GPIO.
+### In this project, I used the driver that I implemented for the PIC18F4620 microcontroller. This driver allowed me to control the following devices: LCD, LED, Keypad, BUSH_BUTTON, DC motor, Timers, Interrupt, and GPIO.
+### I used the timer to trigger an interrupt every 1 second 
+### There are the steps to run a microwave oven : 
 - ### Open the door. The light inside the microwave will turn on.
 - ### Put the food in the microwave. The food sensor will sense the food.
 - ### Close the door. You cannot set the time when the door is open.
