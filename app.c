@@ -60,30 +60,6 @@ int main() {
 }
 
 /**
- * @brief To check the condition of a push button
- * @param void
- * @return void 
- */
-void Button_State(){
-    /* Check if there is food in the microwave */
-    button_status (&Food_button,&Food_in);
-    /* Check the status of the door */
-    button_status (&Door_button,&Door);
-    button_status (&Start_button,&Start);
-    /* Check the status of the Start */
-    if (Start == BUTTON_PUSHED){
-        Start_Flag = SET;
-    }
-    /* Check the status of the Stop */
-    button_status (&Stop_button,&Stop);
-    if(Stop == BUTTON_PUSHED){
-
-        Pause_Flage++;
-        Cancel_Flage++;
-    }
-}
-
-/**
  * @brief To Set the time from (0 to 99)
  * @param void
  * @return void 
@@ -152,6 +128,30 @@ void Timer_ISR(){
             Start_Flag = CLEAR;
             Stop_Microwave();
         }
+    }
+}
+
+/**
+ * @brief To check the condition of a push button
+ * @param void
+ * @return void 
+ */
+void Button_State(){
+    /* Check if there is food in the microwave */
+    button_status (&Food_button,&Food_in);
+    /* Check the status of the door */
+    button_status (&Door_button,&Door);
+    button_status (&Start_button,&Start);
+    /* Check the status of the Start */
+    if (Start == BUTTON_PUSHED){
+        Start_Flag = SET;
+    }
+    /* Check the status of the Stop */
+    button_status (&Stop_button,&Stop);
+    if(Stop == BUTTON_PUSHED){
+
+        Pause_Flage++;
+        Cancel_Flage++;
     }
 }
 
