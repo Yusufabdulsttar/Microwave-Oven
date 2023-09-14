@@ -23,27 +23,27 @@ int main() {
           led_off(&led_Lamp);
         }
         /* Check if food is in microwave and door is closed */
-		if(Food_in == HIGH && Door == LOW)
+	if(Food_in == HIGH && Door == LOW)
+	{
+		/* We want to set time only once */
+		Set_Time();
+    
+   		/* Check the state of the start button */
+		if(Start_Flag == SET && Pause_Flage == CLEAR)
 		{
-			/* We want to set time only once */
-			Set_Time();
-            
-            /* Check the state of the start button */
-			if(Start_Flag == SET && Pause_Flage == CLEAR)
-			{
-                /* Turn on the microwave, heater, and lamb */
-				Start_Microwave();
-                Cancel_Flage = CLEAR;
-			}
+		/* Turn on the microwave, heater, and lamb */
+			Start_Microwave();
+			Cancel_Flage = CLEAR;
 		}
+	}
 
         /* Check the state of the Stop button */
-		if(Pause_Flage == SET)
-		{
+	if(Pause_Flage == SET)
+	{
             Start_Flag = CLEAR;
             Pause_Flage = CLEAR;
             Stop_Microwave(); // stope the operation 
-		}
+	}
         /* if the stop button is pressed twice, restart the program  */
         if (Cancel_Flage == CANCEL){
             Stop_Microwave();
@@ -66,26 +66,27 @@ int main() {
  */
 void Set_Time(){
     if(Time_check != 2){
-    /* get input key from keypad */
-    keypad_value = Keypad_Read_Value();
-    /* check if the input is correct */
+   	/* get input key from keypad */
+    	keypad_value = Keypad_Read_Value();
+	    
+   	/* check if the input is correct */
         if(('0' <= keypad_value) && ('9' >= keypad_value))
         {
             if (keypad_value != 0){
-            /* Store the time */
-            Time_minutes = (Time_minutes * 10) + (keypad_value - '0');
+          	  /* Store the time */
+           	 Time_minutes = (Time_minutes * 10) + (keypad_value - '0');
 			
-            /* display time*/
-            if (Time_minutes <= 9){
-                char_temp = keypad_value;
-                lcd_4bit_send_char_data_pos(&lcd, 2, 9, char_temp);    
-            }
-            else if(Time_minutes >= 10){
-                lcd_4bit_send_char_data_pos(&lcd, 2, 9, keypad_value);
-                lcd_4bit_send_char_data_pos(&lcd, 2, 8, char_temp);
-            }
-            ++Time_check;
-            keypad_value = 0;
+            	/* display time*/
+           	 if (Time_minutes <= 9){
+             	 	 char_temp = keypad_value;
+             	  	 lcd_4bit_send_char_data_pos(&lcd, 2, 9, char_temp);    
+                  }
+          	  else if(Time_minutes >= 10){
+              	  	lcd_4bit_send_char_data_pos(&lcd, 2, 9, keypad_value);
+                	lcd_4bit_send_char_data_pos(&lcd, 2, 8, char_temp);
+         	  }
+          	  ++Time_check;
+          	  keypad_value = 0;
             }
         }
     }
@@ -142,14 +143,15 @@ void Button_State(){
     /* Check the status of the door */
     button_status (&Door_button,&Door);
     button_status (&Start_button,&Start);
+	
     /* Check the status of the Start */
     if (Start == BUTTON_PUSHED){
         Start_Flag = SET;
     }
+	
     /* Check the status of the Stop */
     button_status (&Stop_button,&Stop);
     if(Stop == BUTTON_PUSHED){
-
         Pause_Flage++;
         Cancel_Flage++;
     }
