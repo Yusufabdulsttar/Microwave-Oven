@@ -14,47 +14,47 @@ int main() {
     lcd_4bit_send_string_pos(&lcd, 2, 8, "00:00");  
 	while(1)
 	{
-        Button_State();
-        /* Check if door is closed */
-        if (Door == HIGH){
-           led_on(&led_Lamp);
-        }
-        if (Door == LOW && Start_Flag == CLEAR){
-          led_off(&led_Lamp);
-        }
-        /* Check if food is in microwave and door is closed */
-	if(Food_in == HIGH && Door == LOW)
-	{
-		/* We want to set time only once */
-		Set_Time();
-    
-   		/* Check the state of the start button */
-		if(Start_Flag == SET && Pause_Flage == CLEAR)
-		{
-		/* Turn on the microwave, heater, and lamb */
-			Start_Microwave();
-			Cancel_Flage = CLEAR;
+		Button_State();
+		/* Check if door is closed */
+		if (Door == HIGH){
+		   led_on(&led_Lamp);
 		}
-	}
-
-        /* Check the state of the Stop button */
-	if(Pause_Flage == SET)
-	{
-            Start_Flag = CLEAR;
-            Pause_Flage = CLEAR;
-            Stop_Microwave(); // stope the operation 
-	}
-        /* if the stop button is pressed twice, restart the program  */
-        if (Cancel_Flage == CANCEL){
-            Stop_Microwave();
-            lcd_4bit_send_string_pos(&lcd, 2, 8, "00:00");
-            Pause_Flage = CLEAR;
-            Start_Flag = CLEAR;
-            Time_minutes = CLEAR;
-            Time_seconds = 60;
-            Cancel_Flage = CLEAR;
-            Time_check = CLEAR;
-        }
+		if (Door == LOW && Start_Flag == CLEAR){
+		  led_off(&led_Lamp);
+		}
+		/* Check if food is in microwave and door is closed */
+		if(Food_in == HIGH && Door == LOW)
+		{
+			/* We want to set time only once */
+			Set_Time();
+		
+			/* Check the state of the start button */
+			if(Start_Flag == SET && Pause_Flage == CLEAR)
+			{
+			/* Turn on the microwave, heater, and lamb */
+				Start_Microwave();
+				Cancel_Flage = CLEAR;
+			}
+		}
+		
+		/* Check the state of the Stop button */
+		if(Pause_Flage == SET)
+		{
+		    Start_Flag = CLEAR;
+		    Pause_Flage = CLEAR;
+		    Stop_Microwave(); // stope the operation 
+		}
+		/* if the stop button is pressed twice, restart the program  */
+		if (Cancel_Flage == CANCEL){
+		    Stop_Microwave();
+		    lcd_4bit_send_string_pos(&lcd, 2, 8, "00:00");
+		    Pause_Flage = CLEAR;
+		    Start_Flag = CLEAR;
+		    Time_minutes = CLEAR;
+		    Time_seconds = 60;
+		    Cancel_Flage = CLEAR;
+		    Time_check = CLEAR;
+		}
 	}
     return 0;
 }
