@@ -1,0 +1,10 @@
+../Core/Src/main.c:99:5:main	8	static
+../Core/Src/main.c:190:6:SystemClock_Config	88	static
+../Core/Src/main.c:227:6:Button_State	8	static
+../Core/Src/main.c:251:6:Set_Time	8	static
+../Core/Src/main.c:283:6:Timer_ISR	8	static
+../Core/Src/main.c:323:6:Start_Microwave	8	static
+../Core/Src/main.c:340:6:Stop_Microwave	8	static
+../Core/Src/main.c:357:9:Keypad_Read_Value	16	static
+../Core/Src/main.c:369:6:initialization	8	static
+../Core/Src/main.c:415:6:Error_Handler	4	static,ignoring_inline_asm

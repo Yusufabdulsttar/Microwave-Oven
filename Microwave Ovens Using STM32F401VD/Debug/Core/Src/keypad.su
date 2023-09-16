@@ -1,0 +1,2 @@
+../Core/Src/keypad.c:17:6:keypad_initialize	24	static
+../Core/Src/keypad.c:24:6:keypad_read	24	static

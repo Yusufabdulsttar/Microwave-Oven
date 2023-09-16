@@ -1,0 +1,9 @@
+../Core/Src/LCD.c:19:6:lcd_4bit_intialize	16	static
+../Core/Src/LCD.c:46:6:lcd_4bit_send_command	16	static
+../Core/Src/LCD.c:69:6:lcd_4bit_send_char_data	16	static
+../Core/Src/LCD.c:95:6:lcd_4bit_send_char_data_pos	16	static
+../Core/Src/LCD.c:110:6:lcd_4bit_send_string	16	static
+../Core/Src/LCD.c:128:6:lcd_4bit_send_string_pos	24	static
+../Core/Src/LCD.c:145:13:lcd_send_4bits	16	static
+../Core/Src/LCD.c:160:13:lcd_4bit_send_enable_signal	16	static
+../Core/Src/LCD.c:176:13:lcd_4bit_set_cursor	16	static

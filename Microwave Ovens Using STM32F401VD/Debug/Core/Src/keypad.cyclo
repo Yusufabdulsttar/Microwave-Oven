@@ -1,0 +1,2 @@
+keypad.c:17:6:keypad_initialize	2
+keypad.c:24:6:keypad_read	5
