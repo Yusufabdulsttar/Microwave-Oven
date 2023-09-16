@@ -1,5 +1,5 @@
-# Microwave designed using PIC Microcontroller and simulated in Proteus
-### In this project, I used the driver that I implemented for the PIC18F4620 microcontroller. This driver allowed me to control the following devices: LCD, LED, Keypad, BUSH_BUTTON, DC motor, Timers, Interrupt, and GPIO.
+# Microwave designed using STM32F401VD Microcontroller and simulated in Proteus
+### In this project, I used STM32F401VD Microcontroller. I used a microcontroller to control the following devices: LCD, LED, Keypad, BUSH_BUTTON, DC motor, Timers, Interrupt, and GPIO.
 ### I used the timer to trigger an interrupt every 1 second 
 ### There are the steps to run a microwave oven : 
 - ### Open the door. The light inside the microwave will turn on.
@@ -10,4 +10,4 @@
 - ### To add more food or change the cooking time, press the Stop button once, make your changes, and press Start, The microwave will continue cooking from where it left off.
 - ### To turn off the microwave, press the Stop button Two times one after the other.
 
-![Yusuf Abdulsttar](https://github.com/Yusufabdulsttar/Microwave-Ovens/assets/134774623/9559a5fb-2842-46c8-af51-0c869b938680)
+![Yusuf Abdulsttar](https://github.com/Yusufabdulsttar/Microwave-Oven/assets/134774623/7040de75-66fd-450a-a596-4d76d1576d1f)
