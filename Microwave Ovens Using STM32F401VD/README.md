@@ -1,5 +1,5 @@
 # Microwave designed using STM32F401VD Microcontroller and simulated in Proteus
-### In this project, I used STM32F401VD Microcontroller. I used a microcontroller to control the following devices: LCD, LED, Keypad, BUSH_BUTTON, DC motor, Timers, Interrupt, and GPIO.
+### In this project, I used STM32F401VD Microcontroller. I used this microcontroller to control the following devices: LCD, LED, Keypad, BUSH_BUTTON, DC motor, Timers, Interrupt, and GPIO.
 ### I used the timer to trigger an interrupt every 1 second 
 ### There are the steps to run a microwave oven : 
 - ### Open the door. The light inside the microwave will turn on.
