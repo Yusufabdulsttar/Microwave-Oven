@@ -282,6 +282,7 @@ void Set_Time(){
  */
 void Timer_ISR(){
 /* If the Run_flag is 1, then the user has pressed the start button and there is food in the microwave */
+/* The Enable_ISR variable is used by the timer interrupt to signal that an interrupt has occurred every 1 second, This will trigger the function every 1 second */
     if(Run_flag == SET && Enable_ISR == SET){
         /* if (Time_minutes) valid then start count the time and display it*/
         if(Time_minutes){
@@ -367,19 +368,19 @@ uint8_t Keypad_Read_Value()
  * @return void
  */
 void initialization(){
-    lcd.lcd_rs.port = GPIOD,
-    lcd.lcd_rs.pin = GPIO_PIN_0,
-    lcd.lcd_en.port = GPIOD,
-    lcd.lcd_en.pin = GPIO_PIN_1,
-
-    lcd.lcd_data[0].port = GPIOD,
-    lcd.lcd_data[0].pin = GPIO_PIN_2,
-    lcd.lcd_data[1].port = GPIOD,
-    lcd.lcd_data[1].pin = GPIO_PIN_3,
-    lcd.lcd_data[2].port = GPIOD,
-    lcd.lcd_data[2].pin = GPIO_PIN_4,
-    lcd.lcd_data[3].port = GPIOD,
-    lcd.lcd_data[3].pin = GPIO_PIN_5;
+	lcd.lcd_rs.port = GPIOD,
+	lcd.lcd_rs.pin = GPIO_PIN_0,
+	lcd.lcd_en.port = GPIOD,
+	lcd.lcd_en.pin = GPIO_PIN_1,
+	
+	lcd.lcd_data[0].port = GPIOD,
+	lcd.lcd_data[0].pin = GPIO_PIN_2,
+	lcd.lcd_data[1].port = GPIOD,
+	lcd.lcd_data[1].pin = GPIO_PIN_3,
+	lcd.lcd_data[2].port = GPIOD,
+	lcd.lcd_data[2].pin = GPIO_PIN_4,
+	lcd.lcd_data[3].port = GPIOD,
+	lcd.lcd_data[3].pin = GPIO_PIN_5;
 
 
 	keypad.keypad_row[0].port = GPIOD,
@@ -390,7 +391,7 @@ void initialization(){
 	keypad.keypad_row[2].pin = GPIO_PIN_9,
 	keypad.keypad_row[3].port = GPIOD,
 	keypad.keypad_row[3].pin = GPIO_PIN_10,
-
+	
 	keypad.keypad_col[0].port = GPIOD,
 	keypad.keypad_col[0].pin = GPIO_PIN_11,
 	keypad.keypad_col[1].port = GPIOD,
@@ -399,7 +400,7 @@ void initialization(){
 	keypad.keypad_col[2].pin = GPIO_PIN_13,
 	keypad.keypad_col[3].port = GPIOD,
 	keypad.keypad_col[3].pin = GPIO_PIN_14;
-
+	
 	lcd_4bit_intialize(&lcd);
 	keypad_initialize (&keypad);
 
