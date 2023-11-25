@@ -9,5 +9,5 @@
 - ### Press the Start button. The microwave will start cooking the food and display the remaining time.
 - ### To add more food or change the cooking time, press the Stop button once, make your changes, and press Start, The microwave will continue cooking from where it left off.
 - ### To turn off the microwave, press the Stop button Two times one after the other.
-simulation : 
+### simulation : 
 ![Yusuf Abdulsttar](https://github.com/Yusufabdulsttar/Microwave-Oven/assets/134774623/7040de75-66fd-450a-a596-4d76d1576d1f)
